@@ -52,15 +52,12 @@ const displayNews = (news) =>{
     const newsContainer = document.getElementById('news-container');
     // console.log(categoryContainer)
     
+
+
     for(const allNews of mine){
 
-      const modalTitle =document.getElementById('exampleModalLabel');
-       modalTitle.innerText=allNews.title;
       
-       const countryDetail =document.getElementById('country-details');
-        countryDetail.innerHTML =`
-                <p class="card-text">${allNews.details}</p>
-                     `
+      
 
 
 
@@ -88,7 +85,7 @@ const displayNews = (news) =>{
                               <p><small class="text-body-secondary">${allNews.total_view}M</small></p>   
                         </div>
                         <div>
-                            <button  type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal" style=margin-top:15px; >Visit</button>
+                            <button onclick="loadNews('${allNews._id}')" type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal" style=margin-top:15px; >Visit</button>
                         </div>
                         </div>
                         
@@ -102,15 +99,17 @@ const displayNews = (news) =>{
                           
                           `;
             
-         
-        
                           newsContainer.appendChild(allNewsDiv);
                           // categoryID(category.category_name);
                         }
+                         
+                        
                         
                         
                       }
                       
+                      
+
                       // function myFunction() {
                       //   // var x = document.getElementById("news1");
                       //   function clearBox("news-container")
@@ -127,7 +126,30 @@ const displayNews = (news) =>{
          let div = document.getElementById("news-container");
          div.replaceChildren();
       }
-                      
+
+      const loadNews=newsID=>{
+        console.log(newsID);
+
+        const newsUrl=`https:openapi.programming-hero.com/api/news/${newsID}`;
+        fetch(newsUrl)
+        .then(res=>res.json())
+        .then(data=>loadModal(data))
+        }
+
+        const loadModal=newsDetails=>{
+          
+          const modalTitle =document.getElementById('exampleModalLabel');
+         modalTitle.innerText=newsDetails.data[0].title;
+         console.log(newsDetails.data[0].title)
+         const countryDetail =document.getElementById('country-details');
+          countryDetail.innerHTML =`
+                  <p class="card-text">${newsDetails.data[0].details}</p>
+                       `
+        }
+
+      
+
+          
  news();
                       
                       
