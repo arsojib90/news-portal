@@ -1,0 +1,174 @@
+
+.body{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+}
+.body2{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+}
+.navv{
+    font-size: 20px;
+    color: #f12b2b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 20px;
+}
+
+.navv:hover{
+    font-size: 20.3px;
+}
+.categories{
+  display:flex;
+  gap: 80px;
+  font-size: 20px;
+}
+.heading{
+  text-decoration: none;
+  color: rgb(52, 48, 48);
+}
+.heading:hover{
+    position: relative;
+    color: #fd790d;
+   
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .sort{
+    font-size: 20px;
+    margin: 30px 0 0 0;
+  }
+  .news1{
+    margin-top: 50px ;
+    margin-bottom: 50px;
+  }
+  .card{
+    width: 100%;
+    height: auto;
+  }
+  .card img{
+    padding: 10px;
+    height: 100%;
+  }
+
+  .cutoff-text{
+    --max-lines:3;
+    display:-webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+  }
+
+  .flex{
+    margin-left: 10%;
+    display: flex;
+    gap:150px
+  }
+
+  .HASH {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.message{
+  height: 500px;
+  width: 100%;
+  text-align: center;
+}
+.first,.second,.third{
+  margin-top: 40px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+.first{
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:  #151719;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+  font-size: 60px;
+}
+.waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i));
+  
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
